@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AFIFAH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto;
+        }
+        table, th, td {
+            border: 1px solid #00abf0;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            background-color: #00acf050;
+            color: white;
+        }
+        td {
+            vertical-align: top;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+         }
+        body{
+        background: #001b29;
+        color: #ededed;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background:transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo{
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .logo::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            animation: showRight 1s ease forwards;
+            animation-delay: .4s;
+
+        }
+        .navbar a{
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+        .navbar a:hover,
+        .navbar a.active{
+            color: #00abf0;
+        }
+        .home{
+            height: 100vh;
+            background: url('Foto22.png') no-repeat;
+            background: cover;
+            background-position: right;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+        .home-content{
+            max-width: 600px;
+        }
+        .home-content h1{
+            font-size: 56px;
+            font-weight:700; 
+            line-height: 1.2;
+        }
+        .home-content h3{
+            font-size: 32px;
+            font-weight: 700;
+            color: #00abf0;
+        }
+        .home-content p{
+            font-size: 16px;
+            margin: 20px 40px;
+        }
+        .home-content.btn-box{
+            display: flex;
+            justify-content: space-between;
+            width: 345px;
+            height: 50px;
+        }
+        .btn-box a{
+            position: relative;
+            width: 150px;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: #00abf0;
+            border: 2px solid #00abf0;
+            border-radius: 8px;
+            font-size:19px;
+            color:#001b29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing:1px;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+        .btn-box a:hover{
+            color: #00abf0;
+        }
+        .btn-box a:nth-child(2){
+            background: transparent;
+            color: #00abf0;
+        }
+        .btn-box a:nth-child(2):hover{
+            color: #001b29;
+        }
+        .btn-box a:nth-child(2)::before{
+            background: #00abf0;
+        }
+        .btn-box a::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #001b29;
+            z-index: -1;
+            transition: .5s;
+        }
+        .btn-box a:hover::before{
+            width: 100%;
+        }
+
+        .home-imgHover{
+            position: absolute;
+            top: 0;
+            right: 30px;
+            width: 500px;
+            height: 100%;
+            background: transparent;
+            transition:-5s;
+        }
+
+        .datadiri {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-left: 30px;
+        }
+
+        .datadiri h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .datadiri p {
+            margin: 10px 0;
+        }
+
+        .datadiri ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .datadiri li {
+            margin-bottom: 5px;
+        }
+
+        .resumepengalaman{
+            font-size: 18px;
+            line-height: 1.6;
+            margin-left: 30px;   
+        }
+
+
+        .about-me-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .about-me-text {
+            flex: 1;
+        }
+
+        .about-me-image {
+            max-width: 20%;
+             
+        }
+        
+        hr {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00abf0, transparent);
+            border: none;
+            margin: 20px 0;
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .photo-card {
+            flex-basis: calc(33.33% - 20px); 
+            margin: 10px;
+            text-align: center;
+        }
+        .photo-card img {
+            max-width: 100%;
+        }
+        .photo-card p {
+            margin-top: 10px;
+            color: #ededed;
+        }
+
+        .project-info {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .project-info img {
+            margin-right: 20px; 
+        }
+        footer {
+        text-align: center;
+        margin-top: 20px; 
+    }
+
+    
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">.Carameluv</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <form id="searchForm">
+            <input type="text" id="search" placeholder="Masukkan Kata Kunci" required>
+            <button type="button" onclick="cari()">Cari</button>
+        </form>
+    
+        <script>
+            function cari() {
+                var searchKeyword = document.getElementById('search').value;
+                console.log('Search keyword: ' + searchKeyword);
+                  }
+        </script>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>Hi, I'm Afifah</h1>
+            <h3>Student of Politeknik Harapan Bersama</h3>
+            <p>I am currently pursuing my education in the third semester of college. I am enrolled in the D4 Informatic Engineering program.</p>
+            <div class="btn-box">
+                <a href="#">See more</a>
+                <a href="#">Let's Talk</a>
+            </div>
+    </section>
+<hr>
+    <div class="about-me-container">
+        <img src="MC4.png" alt="" class="about-me-image" width="200" height="300">
+        <div class="about-me-text">
+            <h1 style="padding-top: 50px;">ABOUT ME</h1>
+        <section class="datadiri">
+            <p style="text-align: justify; margin-right: 100px;">
+                Saya adalah individu yang bersemangat dan berkomitmen untuk meraih kesuksesan dalam kehidupan pribadi dan profesional. Dengan latar belakang Pendidikan Teknik Informatika dan sempat menjadi Juara 3 Nasional di bidang pengembangan perangkat lunak, saya telah membangun fondasi kuat dalam bidang saya.
+            </p>
+            
+            <p style="text-align: justify; margin-right: 100px; padding-bottom: 50px;">
+                Saya memiliki tekad untuk mencapai tujuan saya dan berusaha untuk menjadikan setiap langkah dalam perjalanan hidup ini sebagai kesempatan untuk belajar dan tumbuh. Saya selalu bersemangat untuk menghadapi tantangan baru, berkolaborasi dengan orang-orang yang inspiratif, dan berkontribusi pada kesuksesan tim atau organisasi.
+                Terima kasih telah meluangkan waktu untuk memahami sedikit tentang saya. Saya sangat berharap untuk dapat berkontribusi pada proyek atau tim Anda dan terlibat dalam perjalanan menuju pencapaian tujuan bersama.
+            </p>
+        </section>
+    </div>
+</div>
+<table>
+    <tr>
+        <td style="vertical-align: top; padding-right: 20px;">
+            <section class="resumepengalaman">
+                <b style="font-size: 16px;">Data Diri</b>
+            </section>
+        </td>
+        <td>
+            <section class="datadiri">
+                <p><strong>Nama:</strong> Nur Afifah Uswatun Khasanah</p>
+                <p><strong>TTL:</strong> Tegal, 22 Juni 2003</p>
+                <p><strong>Alamat:</strong> Desa Dukuhwringin, Kecamatan Slawi</p>
+                <p><strong>Riwayat Pendidikan:</strong></p>
+                <ul>
+                    <li>SD Negeri Dukuhwringin 03</li>
+                    <li>MTs Negeri 1 Tegal</li>
+                    <li>SMA Negeri 1 Slawi</li>
+                </ul>
+            </section>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top; padding-right: 20px;">
+            <section class="resumepengalaman">
+                <b style="font-size: 16px;">Work Samples</b>
+            </section>
+        </td>
+        <td>
+            <section class="resumepengalaman">
+                <div class="project-info">
+                    <img src="Foto30.png" alt="" width="100">
+                    <p>
+                        Disamping adalah projek pembuatan aplikasi Jasa Tambal Ban yang saya beri nama "KEMPHEZZ". Projek ini merupakan projek UAS mata kuliah Interaksi Manusia dan Komputer yang diampu oleh Bu Dwi Intan Af'idah M.Kom.
+                    </p>
+                </div>
+                <div class="project-info">
+                    <img src="Foto32.png" alt="" width="100">
+                    <p>
+                        Disampinng adalah projek pembuatan aplikasi untuk Badan Kredit Desa di Desa Dukuhwringin yang saya beri nama "SETORZZZZ". Projek ini merupakan projek UAS Mata Kuliah Analisis Desain Perangkat Lunak yang diampu Bapak Ginanjar Wiro Sasmito M.kom.
+                    </p>
+                </div>
+            </section>
+            
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top; padding-right: 20px;">
+            <section class="resumepengalaman">
+                <b style="font-size: 16px;">Resume Invofest</b>
+            </section>
+        </td>
+        <td style="vertical-align: top; padding-right: 20px;">
+            <section class="resumepengalaman">
+            <p> <b>A. Materi Tentang Tips meniti karir dibidang teknologi</b> <br>
+                Komerce adalah perusahaan teknologi yang berfokus untuk mempermudah operasional bisnis online UMKM dari hulu ke hilir.
+                Ada 8 produk dari komerce <br>
+                    1.	Komtim  (Platform penyedia tim operasional e-commerce siap pakai) <br>
+                    2.	Komship (Platform manajemen pengiriman) <br>
+                    3.	Kompack (Platform manajemen pergudangan) <br>
+                    4.	Komclass (Platform peningkatan kapasitas bisnis online) <br>
+                    5.	Komplace (Platform manajemen marketplace) <br>
+                    6.	Pendamping UMKM  ( Pendamping bisnis online di kotamu) <br>
+                    7.	Komcards (Kartu debit virtual-nya pebisnis online) <br>
+                    8.	Komfrom  (Form builder khusus buat pebisnis online) <br>
+                </p>
+            <p>
+                <b>B. Materi Tentang PT IVATAMA TEKNOLOGI COMPANY PROFIL 2022</b>
+                Materi ini menjelaskan tentang Penawaran Layanan Profesional,dimana di dalam nya mempunyai 4 macam,yaitu:
+1.	Pengembangan Aplikasi <br>
+•	Konsol dan Aplikasi Berbasis Web <br>
+•	Aplikasi Seluler <br>
+•	Aplikasi dalam Kontainer <br>
+•	Insinyur DevOps <br>
+2.	Proyek Implementasi
+•	Manajemen proyek
+•	Analis Bisnis
+•	Konfigurasi 
+•	Kustomisai 
+•	Pengujian 
+•	Dokumentasi 
+•	Tranfer Pengetahuan
+3.	Infrastruktur & Middleware
+•	Telanjang Logam
+•	Platform Virtualisasi
+•	Platform Kontainer
+•	Server Aplikasi
+•	Manajemen API
+•	Konfigurasi & Otomatisas
+4.	Dukungan Pemeliharaan
+•	Pemeliharaan Korektif
+•	Pemeliharaan Preventif
+
+                        
+                    </p>
+
+            
+        </td>
+    </tr>
+</table>
+    <script>
+        // Function to create the "Resume Pengalaman" section
+        function createResumePengalaman() {
+            const resumeSection = document.createElement('section');
+            resumeSection.innerHTML = `
+                <h2 style="text-align: center; padding-top: 40px;">Resume Pengalaman</h2>
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="Foto24.png" alt="Foto 1">
+                        <p>Juara 3 Gemastik Tingkat Nasional</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="Foto28.png" alt="Foto 2">
+                        <p>Pembawa Acara Seminar InvoFest 2023</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="Foto29.png" alt="Foto 3">
+                        <p>Anggota KPR 2023</p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(resumeSection);
+        }
+        createResumePengalaman();
+    </script>
+        <hr>
+        <p style="text-align: center;">Instagram: <a href="https://instagram.com/afifahhffi_?utm_source=qr&igshid=OGIxMTE0OTdkZA==">Instagram.com/afifahhffi_</a></p>
+        <p style="text-align: center;">Email: <a href=""></a>nurafifahuswatunkh@gmail.com</p>
+        <hr>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2023, 3A_22090161_NUR AFIFAH USWATUN KHASANAH </p>
+</footer>
+</html>

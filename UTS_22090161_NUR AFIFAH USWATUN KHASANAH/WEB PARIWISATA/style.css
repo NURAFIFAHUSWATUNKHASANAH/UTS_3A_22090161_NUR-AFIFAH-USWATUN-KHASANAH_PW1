@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: hsl(209, 59%, 82%);
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: rgba(31, 125, 247, 0.205);
+    color: #fff; 
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    z-index: 100; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+h2 {
+    font-size: 24px;
+    margin-left: 20px; 
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px;
+    text-align: center; 
+}
+
+main {
+    margin-top: 0; 
+}
+
+.header-links {
+    margin-top: 10px;
+}
+.header-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.image-container {
+    position: relative; 
+}
+.full-width-image {
+    width: 100%;
+}
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    width: 100%; 
+}
+img {
+    display: block; 
+    margin: 0 auto; 
+}
+
+.berita {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+.berita img {
+    width: 20%; 
+    margin-right: 10px; 
+}
+.berita .konten {
+    flex: 1; 
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+
